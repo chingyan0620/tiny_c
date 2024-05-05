@@ -1,22 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 // compile:
-// gcc bubble_sort.c -o bubble_sort
+// gcc insertion_sort.c -o insertion_sort
 
-void bubble_sort(int len , int *array){
-
-    for(int i = 0 ; i < len ; i++){
-        for(int j = 1 ; j < len-i+1 ; j++){
-            if(array[j] < array[j-1]){
-                int tmp = array[j];
-                array[j] = array[j - 1];
-                array[j - 1] = tmp;
-            }
-        }
-    }
-}
 void build_rand(int start ,int end,int len , int*array){
     srand(time(NULL));
     int pool = end - start  ;
@@ -43,18 +30,31 @@ void print_arr(int len, int * array){
     }
 }
 
+void insertion_sort(int len, int * array){
+
+    for(int i = 1 ; i < len ; i++){
+        int val = array[i];
+        int j = i - 1;
+        while (j>=0 && array[j] > val)
+        {
+            array[j+1] = array[j];
+            j--;
+        }
+        array[j+1] = val;
+    }
+
+}
 int main(){
-    int len = 10;
+    int len = 11;
     int *arr = calloc(len , sizeof(int));
 
-    build_rand(450 , 500,len , arr);
+    build_rand(0 , 11,len , arr);
     print_arr(len , arr);
-    bubble_sort(len , arr);
-    printf("\n");
+    insertion_sort(len , arr);
+    printf("\n------------------------\n");
     print_arr(len , arr);
 
     printf("\nfinish !!");
     free(arr);
 
-    return 0;
 }
