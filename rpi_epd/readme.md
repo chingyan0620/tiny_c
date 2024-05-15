@@ -1,9 +1,8 @@
 ## 電子墨水螢幕顯示
+* * *
 
-#### 複製至目標裝置
 
-scp -r ken@192.168.50.138:/home/ken/Desktop/spi_test/e-Paper/RaspberryPi_JetsonNano/c/examples D:\program\github_local\c_project\tiny_c\rpi_epd
-
+---------------------------------------
 #### 編譯與執行流程
 
 在Windows 10 上使用cross compiler編譯，使用scp將編譯後檔案傳送至目標裝置(這邊是樹莓派 4B開發版)上進行執行。  
