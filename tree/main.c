@@ -10,6 +10,7 @@ int main(){
     printf("tree is empty :%d \n" ,isBTreeEmpty());
     printf("tree content :\n");
     printBTree();
+    printf("\n");
 
     return 0;
 }
